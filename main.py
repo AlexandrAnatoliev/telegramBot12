@@ -3,7 +3,7 @@
 # Использование функции on_startup, параметра parse_mode="HTML", отправка emoji и stickers
 # При включении бота выполняется функция on_startup
 # По команде /start бот пишет сообщение жирным курсивом
-# По команде /give бот посылает стикер в чат, удаляет сообщение пользователя.
+# По команде /give бот посылает сообщение и стикер в чат, удаляет сообщение пользователя.
 # Бот отвечает на сообщение пользователя его же сообщением, добавляя к нему emoji 🤪
 #
 # https://www.youtube.com/watch?v=lbLzGfshtaY&list=PLe-iIMbo5JOJm6DRTjhleHojroS-Bbocr&index=6
@@ -56,12 +56,13 @@ async def start_command(message: types.Message):
 @dp.message_handler(commands=['give'])
 async def give_command(message: types.Message):
     """
-    По команде /give посылает стикер в чат, удаляет сообщение пользователя
+    По команде /give посылает сообщение и стикер в чат, удаляет сообщение пользователя
     :param message: /give
-    :return: sticker
+    :return: сообщение и sticker
     """
+    await bot.send_message(message.from_user.id, text="Смотри какой смешной кот ❤️")
     await bot.send_sticker(message.from_user.id,
-                           sticker="CAACAgIAAxkBAAEH3t5j95ShMzv012IKJIc2ojsFtZBmAgACHhQAAqkCuUqNRYHXFO-0Oi4E")
+                           sticker="CAACAgIAAxkBAAEH305j97F6tGFBLsiXYpArYZ88f6d8wAACUwADrWW8FKPXOfaLMFQULgQ")
     # sticker_id берем у бота "get sticker id" (@idstickerbot)
     await message.delete()
 
