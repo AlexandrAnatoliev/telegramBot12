@@ -48,7 +48,7 @@ dp = Dispatcher(bot)
 
 async def on_startup(_):  # функция принимает (_) аргумент!
     """Выполняется при включении бота"""
-    print("Бот успешно запущен")
+    print("Я запустился!")
 
 
 @dp.message_handler(commands=['start'])
