@@ -26,9 +26,9 @@
 # Функция on_startup(_) принимает '_' аргумент!
 ```
 
-* sticker_id берем у бота "get sticker id" (@idstickerbot). emoji 🤪 просто копируем из телеграмм
+* sticker_id берем у бота "get sticker id" (@idstickerbot). Emoji 🤪 просто копируем из телеграмм
 * @dp.message_handler(content_types=['sticker']) тип входящего контента в хендлер - стикер
-* await message.answer(message.sticker.file_id)  # посылаем id стикера
+* await message.answer(message.sticker.file_id)  посылаем id стикера
 
 ## Требования:
 
